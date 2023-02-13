@@ -15,6 +15,10 @@ public class User {
 		this.last_name = last_name;
 		this.mobile_number = mobile_number;
 	}
+	
+	public String toString() {
+		return username + " " + password + " - " + "first name: " + first_name + " last name: " + last_name + " -  ContactNo: " + mobile_number; 
+	}
 
 	public String getUsername() {
 		return username;
@@ -32,27 +36,27 @@ public class User {
 		this.password = password;
 	}
 	
-	public String getFirst_name() {
+	public String getFirstName() {
 		return first_name;
 	}
 	
-	public void setFirst_name(String first_name) {
+	public void setFirstName(String first_name) {
 		this.first_name = first_name;
 	}
 	
-	public String getLast_name() {
+	public String getLastName() {
 		return last_name;
 	}
 	
-	public void setLast_name(String last_name) {
+	public void setLastName(String last_name) {
 		this.last_name = last_name;
 	}
 	
-	public String getMobile_number() {
+	public String getMobileNumber() {
 		return mobile_number;
 	}
 	
-	public void setMobile_number(String mobile_number) {
+	public void setMobileNumber(String mobile_number) {
 		this.mobile_number = mobile_number;
 	}	
 }
