@@ -26,7 +26,7 @@ public class SimpleBankingAppTest {
 		
 		mainApp.populateAccountData();
 		assert mainApp.accounts.size() == 4;
-		System.out.println("testDataLoads: populateAccountData: TC1 passed.");
+		System.out.println("testDataLoads: populateAccountData: TC2 passed.");
 		
 		// Teardown phase: no Teardown is needed for this test case, since we have not made 
 		// any changes to the system state in the test case 
@@ -50,16 +50,27 @@ public class SimpleBankingAppTest {
 	}
 
 	// this test method (test case) verifies if the Withdraw feature works properly
-	/* TODO
+	// TODO 4
 	public static void testWithdrawals() {
-		...
+		// Setup phase
+		double balanceBefore = mainApp.getBalance("5495-1234"); 
+		double withdrawalAmount = -50.00;
+				
+		// Exercise phase
+		mainApp.addTransaction("5495-1234", withdrawalAmount);
+		double balanceAfter = mainApp.getBalance("5495-1234");
+		assert balanceBefore + withdrawalAmount == balanceAfter;
+		System.out.println("testWithdrawal: TC1 passed. ");
+				
+		// tear-down: put the system state back in where it was
+		mainApp.addTransaction("5495-1234", withdrawalAmount);
 	}
-	*/
+	
 	
 	public static void main(String[] args) {
 		testDataLoads();
 		testDeposits();
-		// testWithdrawals(); -- uncomment this call, when you have developed the test method (test case)
+		testWithdrawals(); //-- uncomment this call, when you have developed the test method (test case)
 	}
 
 }
